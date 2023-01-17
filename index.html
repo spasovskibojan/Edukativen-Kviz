@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">    
+    <link rel="stylesheet" href="quiz-final.css">
+    <title>Едукативен квиз</title>
+</head>
+<body>
+    <nav class="nav-wrapper" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container">
+            <a href="#index.html" class="brand-logo center" style="font-size:50px;">Едукативен квиз</a>
+        </div>
+    </nav>
+    <div style="margin-top: 150px;">
+    <section class="section">
+        <div class="row">
+                <form class="myform" name="id" onsubmit="submitted(event)">
+                <h4 class="b1">Име на натпреварувачот</h4>
+
+                <div class="progress">
+                    <div class="indeterminate blue "></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix" style="color: rgb(0, 0, 0);">account_box</i>
+                    <input type="text" id="name" style=" color: rgb(0, 0, 0); ">
+                    <label for="name" class="labeel" style="color: black; border-bottom-color: black !important;">Име</label>                          
+                    <p class="center"><button type="submit" class="kopce" onclick="this.style.display='none'">Понатаму</button></p>            
+                </div>
+                <div class="rules">
+                    <p class="select">Правила на квизот:</p>
+                    <p class="white center-align">1. Не можеш да скокаш прашања</p>
+                    <p class="white center-align">2. Не можеш да се вратиш на претходно прашање</p>
+                    <p class="white center-align">3. Играј без мамење</p>
+                    <p class="white center-align">4. Секој точен одговор се вреднува со 10 поени</p>
+                </div>
+
+                <div class="progress">
+                    <div class="indeterminate blue"></div>
+                </div>
+
+                <div class="subjects">
+                    <p class="select">Odberi predmet</p>
+                        <ul class="subject_options">                            
+                            <li class="subject_option"><button class="predmet" onclick="math()">Математика</button></li>
+                            <li class="subject_option"><button class="predmet" onclick="physics()">Физика</button></li>                            
+                            <li class="subject_option"><button class="predmet" onclick="biology()">Биологија</button></li>
+                            <li class="subject_option"><button class="predmet" onclick="chemistry()">Хемија</button></li>
+                            <li class="subject_option"><button class="predmet" onclick="geography()">Географија</button></li>                            
+                        </ul> 
+                        
+                </div>
+                <p class="center"><a href="javascript:locate()" class="kopce">Започни</a></p>
+            </form>
+        </div>  
+    </section>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="userinfo.js"></script>
+<script src="quiz.js"></script>
+<script>
+    function submitted(e){
+        e.preventDefault();
+        let namee = document.forms['id']['name'].value;
+      sessionStorage.setItem('name', namee);
+    }
+</script>
+</body>
+</html>
